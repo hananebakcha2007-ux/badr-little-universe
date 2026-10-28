@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badr's Little Universe ♡</title>
+  <meta name="theme-color" content="#100d20">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#" id="homeLink">♡ B.L.U.</a>
+    <span class="top-label">A little universe for Badr</span>
+  </header>
+
+  <main>
+    <!-- WELCOME -->
+    <section class="hero" id="welcome">
+      <div class="moon">☾</div>
+      <p class="eyebrow">MADE WITH LOVE, JUST FOR YOU</p>
+      <h1>Welcome to your<br><span>little universe, Badr.</span></h1>
+      <p class="intro">
+        A tiny place filled with words, memories, and little pieces of my heart.
+      </p>
+      <button class="primary-btn" id="enterBtn">
+        Enter Your Little World <span>♡</span>
+      </button>
+      <p class="tiny-note">Take your time. This little world is yours.</p>
+    </section>
+
+    <!-- MAIN SITE -->
+    <div id="mainContent" class="hidden">
+      <section class="section intro-section">
+        <p class="eyebrow">JUST FOR YOU</p>
+        <h2>Hi, Badr <span class="pink">♡</span></h2>
+        <p class="muted">
+          If the world feels too loud, I hope this little corner feels peaceful.
+        </p>
+      </section>
+
+      <!-- LOVE LETTER -->
+      <section class="section panel" id="loveLetterSection">
+        <div class="section-icon">💌</div>
+        <p class="eyebrow">A LETTER FROM ME TO YOU</p>
+        <h2>A little something for your heart</h2>
+        <p class="muted">Some words are better read slowly.</p>
+        <button class="secondary-btn" id="openLetterBtn">
+          Open My Letter
+        </button>
+        <article class="letter-paper hidden" id="loveLetter">
+          <p>My dear Badr,</p>
+          <p>
+            I made this little universe because I wanted to give you
+            something that feels personal, something made with time,
+            care, and a little bit of magic.
+          </p>
+          <p>
+            I hope life brings you beautiful things, peaceful days,
+            and reasons to be proud of yourself. When things get difficult,
+            remember that one hard day never defines who you are.
+          </p>
+          <p>
+            Thank you for being someone who has a special place in my story.
+            I hope this tiny corner of the internet makes you smile.
+          </p>
+          <p class="signature">With love, always ♡</p>
+        </article>
+      </section>
+
+      <!-- LOCKED LETTERS -->
+      <section class="section" id="lettersSection">
+        <p class="eyebrow">OPEN ONLY WHAT YOUR HEART NEEDS</p>
+        <h2>Letters for different moments</h2>
+        <p class="muted">
+          Choose the letter that matches how you feel today.
+        </p>
+
+        <div class="letter-grid">
+          <article class="letter-card">
+            <div class="envelope">🌙</div>
+            <h3>When you're tired</h3>
+            <p>A gentle reminder to rest.</p>
+            <button class="letter-btn" data-letter="tired">🔒 Open this letter</button>
+            <div class="letter-message hidden" id="letter-tired">
+              <p>You don't have to be strong every second, Badr.</p>
+              <p>Rest when you need to. Take a breath. You deserve peaceful
+              moments too. Tomorrow is another chance. ♡</p>
+            </div>
+          </article>
+
+          <article class="letter-card">
+            <div class="envelope">☁️</div>
+            <h3>When you're overthinking</h3>
+            <p>For the days your mind feels too loud.</p>
+            <button class="letter-btn" data-letter="thinking">🔒 Open this letter</button>
+            <div class="letter-message hidden" id="letter-thinking">
+              <p>Not every thought is a fact, and not every worry will come true.</p>
+              <p>Take things one step at a time. Be kind to yourself.
+              You don't have to figure everything out tonight. ♡</p>
+            </div>
+          </article>
+
+          <article class="letter-card">
+            <div class="envelope">💌</div>
+            <h3>When you miss me</h3>
+            <p>A little reminder of us.</p>
+            <button class="letter-btn" data-letter="miss">🔒 Open this letter</button>
+            <div class="letter-message hidden" id="letter-miss">
+              <p>If you miss me right now, let this little letter bring you
+              a smile.</p>
+              <p>Even when we're not talking, I hope you remember the
+              good moments we share. Sending you a little warmth from here. ♡</p>
+            </div>
+          </article>
+
+          <article class="letter-card">
+            <div class="envelope">⭐</div>
+            <h3>When you're proud of yourself</h3>
+            <p>Because your achievements matter.</p>
+            <button class="letter-btn" data-letter="proud">🔒 Open this letter</button>
+            <div class="letter-message hidden" id="letter-proud">
+              <p>Pause for a moment and give yourself credit.</p>
+              <p>Look at how far you've come, even if you still have
+              dreams to reach. You deserve to celebrate every step forward.
+              I'm cheering for you. ♡</p>
+            </div>
+          </article>
+
+          <article class="letter-card">
+            <div class="envelope">🔥</div>
+            <h3>When you need motivation</h3>
+            <p>A little push to keep going.</p>
+            <button class="letter-btn" data-letter="motivation">🔒 Open this letter</button>
+            <div class="letter-message hidden" id="letter-motivation">
+              <p>You don't need to do everything at once.</p>
+              <p>Start with one small step. Progress is still progress,
+              even when it's slow. Believe in the person you're becoming.
+              You've got this, Badr. ♡</p>
+            </div>
+          </article>
+
+          <article class="letter-card final-card" id="finalCard">
+            <div class="envelope">🔐</div>
+            <h3>The final letter</h3>
+            <p>One last little surprise, waiting for you.</p>
+            <button class="letter-btn" id="finalLetterBtn" disabled>
+              🔒 Open all five letters first
+            </button>
+            <div class="letter-message hidden" id="finalLetter">
+              <p class="final-heading">You made it here, Badr. ♡</p>
+              <p>If you're reading this, you've opened every letter I left
+              for you.</p>
+              <p>I hope you felt cared for, encouraged, and appreciated
+              along the way. This website may be small, but the thought
+              behind it is real.</p>
+              <p>Keep this little universe as a reminder that you deserve
+              kindness on the difficult days and happiness on the beautiful ones.</p>
+              <p class="signature">You are a special part of my story. ♡</p>
+            </div>
+          </article>
+        </div>
+        <p class="progress-text" id="letterProgress">Letters opened: 0 / 5</p>
+      </section>
+
+      <!-- MEMORIES -->
+      <section class="section panel">
+        <div class="section-icon">✨</div>
+        <p class="eyebrow">LITTLE MOMENTS</p>
+        <h2>Our memory corner</h2>
+        <p class="muted">
+          A place for the moments that make an ordinary day feel special.
+        </p>
+        <div class="memory-grid">
+          <article class="memory">
+            <span>🌷</span>
+            <h3>The little things</h3>
+            <p>Sometimes the smallest moments become the sweetest memories.</p>
+          </article>
+          <article class="memory">
+            <span>🌌</span>
+            <h3>Our conversations</h3>
+            <p>Words, laughter, and moments worth remembering.</p>
+          </article>
+          <article class="memory">
+            <span>🕊️</span>
+            <h3>What I wish for you</h3>
+            <p>Peace in your heart, courage for your dreams, and many reasons to smile.</p>
+          </article>
+        </div>
+        <p class="tiny-note">
+          You can replace these cards with your own memories and photos later.
+        </p>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="section panel" id="quizSection">
+        <div class="section-icon">🎀</div>
+        <p class="eyebrow">A LITTLE GAME</p>
+        <h2>How well do you know me?</h2>
+        <p class="muted">A few sweet questions, just for fun.</p>
+
+        <div class="quiz-box" id="quizBox">
+          <p class="quiz-count" id="quizCount">Question 1 of 3</p>
+          <h3 id="questionText">What is the main reason I made this website?</h3>
+          <div id="answers" class="answers">
+            <button class="answer-btn" data-answer="0">To practise coding only</button>
+            <button class="answer-btn" data-answer="1">To make you feel special</button>
+            <button class="answer-btn" data-answer="2">Because I was bored</button>
+          </div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+          <button class="secondary-btn hidden" id="nextQuestionBtn">Next question →</button>
+          <div class="quiz-result hidden" id="quizResult">
+            <h3>Thank you for playing! ♡</h3>
+            <p id="scoreText"></p>
+            <p>No score can measure how special a person is.</p>
+            <button class="secondary-btn" id="restartQuizBtn">Play again</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENDING -->
+      <section class="section ending">
+        <div class="moon">✦</div>
+        <p class="eyebrow">BEFORE YOU GO</p>
+        <h2>That's your little universe.</h2>
+        <p class="muted">
+          Come back whenever you need a quiet moment or a small smile.
+        </p>
+        <button class="primary-btn" id="heartBtn">Send a little love ♡</button>
+        <p class="tiny-note" id="heartMessage" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Made with love, just for Badr <span>♡</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #100d20;
+  --panel: #1b1630;
+  --panel-light: #241c3b;
+  --pink: #ff9fcb;
+  --pink-light: #ffd2e7;
+  --purple: #b8a0ff;
+  --text: #fff4fb;
+  --muted: #c5bad4;
+  --border: rgba(255, 202, 232, 0.17);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top, #30204a 0%, transparent 45%),
+    var(--bg);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--pink-light);
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.stars,
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.6;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; transform: scale(0.7); }
+  to { opacity: 0.9; transform: scale(1.3); }
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 10;
+  pointer-events: none;
+  animation: floatUp 3.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.topbar,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  color: var(--pink-light);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.top-label,
+.tiny-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.hero {
+  min-height: 82vh;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.moon {
+  font-size: 3rem;
+  color: var(--pink);
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px rgba(255, 159, 203, 0.5);
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(2.3rem, 6vw, 4.6rem);
+}
+
+h1 span {
+  color: var(--pink);
+}
+
+.intro {
+  max-width: 530px;
+  color: var(--muted);
+  margin: 15px auto 28px;
+}
+
+.primary-btn,
+.secondary-btn,
+.letter-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 22px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.primary-btn {
+  color: #2b1530;
+  background: linear-gradient(135deg, var(--pink-light), var(--pink));
+  font-weight: 700;
+  box-shadow: 0 8px 28px rgba(255, 159, 203, 0.16);
+}
+
+.secondary-btn {
+  color: var(--text);
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+}
+
+.letter-btn {
+  width: 100%;
+  color: var(--text);
+  background: #302345;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.letter-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 159, 203, 0.12);
+}
+
+button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.section {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+  padding: 55px 0;
+  text-align: center;
+  scroll-margin-top: 25px;
+}
+
+.intro-section {
+  padding-top: 65px;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  margin: 10px 0;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.muted {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 12px auto 25px;
+}
+
+.panel {
+  padding: 35px 28px;
+  margin-bottom: 25px;
+  background: rgba(27, 22, 48, 0.83);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+}
+
+.section-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.letter-paper {
+  max-width: 680px;
+  margin: 28px auto 0;
+  padding: 28px;
+  border-radius: 18px;
+  background: #fff1f6;
+  color: #39243d;
+  text-align: left;
+  animation: reveal 0.5s ease both;
+}
+
+.letter-paper p {
+  margin: 0 0 16px;
+}
+
+.signature {
+  color: #9b477a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-grid,
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.letter-card,
+.memory {
+  padding: 23px;
+  background: linear-gradient(145deg, #211a38, #19152b);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  min-width: 0;
+}
+
+.letter-card h3,
+.memory h3 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.letter-card > p,
+.memory p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.envelope {
+  font-size: 1.9rem;
+}
+
+.letter-message {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  color: #f9e8f4;
+  background: rgba(255, 159, 203, 0.09);
+  border: 1px solid rgba(255, 159, 203, 0.15);
+  animation: reveal 0.4s ease both;
+  overflow-wrap: anywhere;
+}
+
+.letter-message p {
+  margin: 0 0 10px;
+}
+
+.letter-message p:last-child {
+  margin-bottom: 0;
+}
+
+.final-card {
+  border-color: rgba(255, 159, 203, 0.38);
+  background: linear-gradient(145deg, #2d1d40, #1c1630);
+}
+
+.final-heading {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--pink-light);
+}
+
+.progress-text {
+  color: var(--pink-light);
+  font-size: 0.9rem;
+  margin-top: 22px;
+}
+
+.memory-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.memory {
+  text-align: center;
+}
+
+.memory span {
+  font-size: 2rem;
+}
+
+.quiz-box {
+  max-width: 600px;
+  margin: 28px auto 0;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(10, 8, 24, 0.35);
+  border: 1px solid var(--border);
+}
+
+.quiz-count {
+  color: var(--pink);
+  font-size: 0.85rem;
+}
+
+.quiz-box h3 {
+  margin: 12px 0 22px;
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer-btn {
+  padding: 13px 16px;
+  color: var(--text);
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.answer-btn:not(:disabled):hover {
+  background: #38274d;
+  border-color: var(--pink);
+}
+
+.answer-btn:disabled {
+  cursor: default;
+}
+
+.answer-btn.correct {
+  border-color: #8be0b0;
+  background: rgba(70, 180, 120, 0.13);
+}
+
+.answer-btn.incorrect {
+  border-color: #e9a2b8;
+  background: rgba(220, 90, 120, 0.12);
+}
+
+.quiz-feedback {
+  min-height: 28px;
+  color: var(--pink-light);
+}
+
+.quiz-result {
+  padding-top: 10px;
+  animation: reveal 0.4s ease both;
+}
+
+.ending {
+  padding-top: 75px;
+  padding-bottom: 85px;
+}
+
+footer {
+  padding: 25px 12px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer span {
+  color: var(--pink);
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    padding: 16px 0;
+  }
+
+  .top-label {
+    font-size: 0.7rem;
+    text-align: right;
+  }
+
+  .hero {
+    min-height: 78vh;
+    padding: 45px 18px;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  .panel {
+    padding: 27px 17px;
+    border-radius: 20px;
+  }
+
+  .letter-grid,
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-card,
+  .memory {
+    padding: 20px;
+  }
+
+  .letter-paper {
+    padding: 21px;
+  }
+
+  .quiz-box {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
